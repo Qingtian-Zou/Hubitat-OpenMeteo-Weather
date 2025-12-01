@@ -171,6 +171,42 @@ metadata {
         attribute "shortwave_radiation_sum_day6", "NUMBER"
         attribute "et0_fao_evapotranspiration_day6", "NUMBER"
         
+        // Additional Daily Variables
+        attribute "temperature_2m_mean_day0", "NUMBER"
+        attribute "apparent_temperature_mean_day0", "NUMBER"
+        attribute "precipitation_probability_mean_day0", "NUMBER"
+        attribute "precipitation_probability_min_day0", "NUMBER"
+        
+        attribute "temperature_2m_mean_day1", "NUMBER"
+        attribute "apparent_temperature_mean_day1", "NUMBER"
+        attribute "precipitation_probability_mean_day1", "NUMBER"
+        attribute "precipitation_probability_min_day1", "NUMBER"
+        
+        attribute "temperature_2m_mean_day2", "NUMBER"
+        attribute "apparent_temperature_mean_day2", "NUMBER"
+        attribute "precipitation_probability_mean_day2", "NUMBER"
+        attribute "precipitation_probability_min_day2", "NUMBER"
+        
+        attribute "temperature_2m_mean_day3", "NUMBER"
+        attribute "apparent_temperature_mean_day3", "NUMBER"
+        attribute "precipitation_probability_mean_day3", "NUMBER"
+        attribute "precipitation_probability_min_day3", "NUMBER"
+        
+        attribute "temperature_2m_mean_day4", "NUMBER"
+        attribute "apparent_temperature_mean_day4", "NUMBER"
+        attribute "precipitation_probability_mean_day4", "NUMBER"
+        attribute "precipitation_probability_min_day4", "NUMBER"
+        
+        attribute "temperature_2m_mean_day5", "NUMBER"
+        attribute "apparent_temperature_mean_day5", "NUMBER"
+        attribute "precipitation_probability_mean_day5", "NUMBER"
+        attribute "precipitation_probability_min_day5", "NUMBER"
+        
+        attribute "temperature_2m_mean_day6", "NUMBER"
+        attribute "apparent_temperature_mean_day6", "NUMBER"
+        attribute "precipitation_probability_mean_day6", "NUMBER"
+        attribute "precipitation_probability_min_day6", "NUMBER"
+
         command "poll"
         command "refresh"
     }
@@ -209,6 +245,10 @@ preferences {
         input "get_wind_direction_10m_dominant", "bool", title: "Dominant Wind Direction (10m)", defaultValue: true
         input "get_shortwave_radiation_sum", "bool", title: "Shortwave Radiation Sum", defaultValue: false
         input "get_et0_fao_evapotranspiration", "bool", title: "Reference Evapotranspiration (ET₀)", defaultValue: false
+        input "get_temperature_2m_mean", "bool", title: "Mean Temperature (2m)", defaultValue: false
+        input "get_apparent_temperature_mean", "bool", title: "Mean Apparent Temperature", defaultValue: false
+        input "get_precipitation_probability_mean", "bool", title: "Mean Precipitation Probability", defaultValue: false
+        input "get_precipitation_probability_min", "bool", title: "Min Precipitation Probability", defaultValue: false
     }
 }
 
@@ -221,7 +261,9 @@ def poll() {
         "daylight_duration", "sunshine_duration", "uv_index_max", "uv_index_clear_sky_max",
         "rain_sum", "showers_sum", "snowfall_sum", "precipitation_sum", "precipitation_hours",
         "precipitation_probability_max", "wind_speed_10m_max", "wind_gusts_10m_max",
-        "wind_direction_10m_dominant", "shortwave_radiation_sum", "et0_fao_evapotranspiration"
+        "wind_direction_10m_dominant", "shortwave_radiation_sum", "et0_fao_evapotranspiration",
+        "temperature_2m_mean", "apparent_temperature_mean", "precipitation_probability_mean", 
+        "precipitation_probability_min"
     ]
 
     def selectedDaily = dailyVariables.findAll { variable -> settings."get_${variable}" }.join(",")
