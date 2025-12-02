@@ -4,12 +4,21 @@ This is a Hubitat Elevation driver for retrieving weather forecast data from the
 
 ## Features
 
+*   **Does not need API key for personal use!**
 *   **7-Day Forecast:** Retrieves a full 7-day weather forecast.
 *   **Highly Customizable:** Allows you to select which daily weather variables to fetch from the API.
 *   **User-Configurable Units:** Supports both Fahrenheit/Celsius for temperature and mph/kmh for wind speed.
 *   **Standard Capabilities:** Implements standard Hubitat capabilities for `TemperatureMeasurement` and `UltravioletIndex` for the current day, ensuring compatibility with Hubitat apps.
 *   **Scheduled Polling:** Automatically refreshes weather data at a user-defined interval.
 *   **Robust Error Handling:** Includes error handling for API requests and data parsing.
+
+## Screenshots
+
+### Dashboard (with "Attribute" template and CSS customizations)
+![Dashboard](resources/dashboard.png)
+
+### Configurations
+![Configurations](resources/configurations.png)
 
 ## Installation
 
